@@ -11,11 +11,15 @@ import UserNotificationsUI
 struct ContentView: View {
     @State var isDark: Bool = false
     @State var is12h: Bool = false
+    @State private var wakeUp = Date()
     
     var body: some View {
         Home(is12h: $is12h, isDark: $isDark)
             .navigationBarHidden(true)
             .preferredColorScheme(isDark ? .dark : .light)
+        Form {
+            DatePicker("Date", selection: $wakeUp)
+        }
     }
 }
 
@@ -30,6 +34,7 @@ struct Home: View {
     @State var receiver = Timer.publish(every: 1, on: .current, in: .default).autoconnect()
     @Binding var is12h: Bool
     @Binding var isDark: Bool
+    
     var width = UIScreen.main.bounds.width
         
     var body: some View {
@@ -171,3 +176,4 @@ struct FormatFomt: ViewModifier {
             .padding(.top, 10)
     }
 }
+
