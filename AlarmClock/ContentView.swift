@@ -55,14 +55,14 @@ struct Home: View {
             }
             .padding()
             
-            Spacer()
+            // Spacer()
             
             Text(getTime())
                 .font(.system(size: 45))
                 .fontWeight(.heavy)
                 .padding(.top, 10)
             
-            Spacer()
+            // Spacer()
             
             ZStack {// Dial
                 Circle()
@@ -166,5 +166,6 @@ struct FormatFomt: ViewModifier {
             .font(.system(size: 35))
             .foregroundColor(.primary)
             .cornerRadius(20)
+            .padding(.top, 10)
     }
 }
