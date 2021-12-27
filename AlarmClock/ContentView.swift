@@ -124,6 +124,7 @@ struct Home: View {
             })
             
             Spacer()
+            
         }
         .onAppear(perform: {
             let calender = Calendar.current
