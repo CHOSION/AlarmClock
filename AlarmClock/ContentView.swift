@@ -121,7 +121,8 @@ struct Home: View {
                     Text("24h")
                         .modifier(FormatFomt())
                 }
-            })
+            }
+            )
             
             Spacer()
             
